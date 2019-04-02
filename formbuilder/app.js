@@ -6,18 +6,23 @@ const createHashHistory = require("history/lib/createHashHistory");
 
 import routes from "./routes";
 import configureStore from "./store/configureStore";
-import "./bootswatch.less";
+// import "./bootswatch.less";
 import "./styles.css";
 
 const store = configureStore({
   notifications: [],
 });
-const history = createHashHistory({queryKey: false});
+const history = createHashHistory({ queryKey: false });
 
-render((
+export const FormBuilder = () => (
   <Provider store={store}>
     <Router history={history}>
       {routes}
     </Router>
   </Provider>
-), document.getElementById("app"));
+);
+
+
+render((
+  <FormBuilder />
+), document.getElementById("root"));
