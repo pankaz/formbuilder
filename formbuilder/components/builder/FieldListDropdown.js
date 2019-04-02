@@ -39,22 +39,36 @@ export default class FieldListDropdown extends Component {
 
   render () {
     return (
-      <Dropdown dropup={this.state.fieldListAction === "add_field"} id="split-button-dropup" className={this.props.className}>
-        <Dropdown.Toggle bsStyle={this.props.bsStyle}>
-          {this.props.children}
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
+      <div>
+        {this.props.children}
+        <div>
           {this.state.fieldList.map((field, index) => {
-            return <MenuItem key={index}
-                eventKey={index}
-                onSelect={this.handleFieldListAction.bind(this)}
-                ><i className={`glyphicon glyphicon-${field.icon}`} />
-                {field.label}
-              </MenuItem>;
-          })}
-        </Dropdown.Menu>
-      </Dropdown>
+            return <button key={index}
+                          eventKey={index}
+                          onClick={this.handleFieldListAction.bind(this)}
+                 ><i className={`glyphicon glyphicon-${field.icon}`} />
+                 {field.label}
+               </button>;
+           })}
+         </div>
+       
+      </div>
+      // <Dropdown dropup={this.state.fieldListAction === "add_field"} id="split-button-dropup" className={this.props.className}>
+      //   <Dropdown.Toggle bsStyle={this.props.bsStyle}>
+          // {this.props.children}
+        // </Dropdown.Toggle>
+
+      //   <Dropdown.Menu>
+      //     {this.state.fieldList.map((field, index) => {
+      //       return <MenuItem key={index}
+      //           eventKey={index}
+      //           onSelect={this.handleFieldListAction.bind(this)}
+      //           ><i className={`glyphicon glyphicon-${field.icon}`} />
+      //           {field.label}
+      //         </MenuItem>;
+      //     })}
+      //   </Dropdown.Menu>
+      // </Dropdown>
     );
   }
 }

@@ -75,11 +75,11 @@ const LinkToHome = () => {
 export default (
     <Route exact path="/" component={App}>
       <IndexRoute components={{...common, mainComponent: FormContainer}} />
-      <Route path="faq"
-        components={{...common, sidebarComponent: LinkToBuilder, content: FAQ}} />
+      {/* <Route path="faq"
+        components={{...common, sidebarComponent: LinkToBuilder, content: FAQ}} /> */}
       <Route path="builder"
         components={{...common, content: FormContainer}} />
-      <Route path="builder/json"
+      {/* <Route path="builder/json"
         components={{...common, sidebarComponent: BackAndDownloadJSONSchema, content: JsonViewContainer}} />
       <Route path="builder/published/:adminToken"
         components={{...common, sidebarComponent: BackAndCheck, content: FormCreatedContainer}} />
@@ -92,6 +92,6 @@ export default (
       <Route path="*" components={{
         sidebarComponent: LinkToHome,
         content: _ => <h1>Page not found.</h1>
-      }}/>
+      }}/> */}
     </Route>
   );

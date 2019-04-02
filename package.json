@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A tool to build forms on the web",
   "scripts": {
-    "build:formbuilder": "SET NODE_ENV=production&& rm -rf dist && mkdir dist && npx babel formbuilder --out-dir dist --copy-files",
+    "build": "NODE_ENV=production && npx babel formbuilder --out-dir dist --copy-files",
     "build:formbuilder-gh": "rimraf build && webpack --config webpack.config.github.js && cp formbuilder/index.prod.html build/index.html",
     "lint": "eslint src test",
     "publish-to-gh-pages": "npm run build:formbuilder-gh && gh-pages --dist build/",
@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "bootswatch": "^3.3.7",
+    "bootswatch": "^3.4.1",
     "btoa": "^1.1.2",
     "history": "^1.17.0",
     "isomorphic-fetch": "^2.2.1",
